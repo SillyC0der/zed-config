@@ -201,4 +201,10 @@
       "ctrl-k": "vim::ScrollUp",
     },
   },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-r": null
+    }
+  }
 ]
