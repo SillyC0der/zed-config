@@ -1,0 +1,10 @@
+{
+  "render snippet": {
+    "prefix": "sv-render",
+    "body": ["{@render ${0:snippet}()}"]
+  },
+  "inspect reactive variable": {
+    "prefix": "sv-inspect",
+    "body": ["$inspect(${0:variable})"]
+  }
+}

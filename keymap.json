@@ -1,0 +1,203 @@
+// Zed keymap
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "tab": "editor::ContextMenuNext",
+      "shift-tab": "editor::ContextMenuPrevious",
+    },
+  },
+  {
+    "context": "vim_operator == a || vim_operator == i || vim_operator == cs",
+    "bindings": {
+      "b": "vim::MiniBrackets",
+      "q": "vim::MiniQuotes",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-escape": ["editor::ShowCompletions", {}],
+    },
+  },
+  {
+    "context": "vim_mode == normal || vim_mode == visual",
+    "bindings": {
+      "s": "vim::PushSneak",
+      "shift-s": "vim::PushSneakBackward",
+    },
+  },
+  {
+    "context": "Picker > Editor",
+    "bindings": {
+      "tab": "menu::SelectNext",
+      "shift-tab": "menu::SelectPrevious",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-g ctrl-j": "git::Pull",
+      "ctrl-g ctrl-k": "git::Push",
+      "ctrl-g ctrl-f": "git::Fetch",
+      "ctrl-g ctrl-d": "git::Diff",
+      "ctrl-g ctrl-b": "git::Branch",
+      "ctrl-g ctrl-g": "git_panel::ToggleFocus",
+    },
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-=": "pane::GoForward",
+    },
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "ctrl-o": "pane::GoForward",
+    },
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "ctrl-i": "pane::GoBack",
+    },
+  },
+  {
+    "context": "GitPanel",
+    "bindings": {
+      "ctrl-g d": null,
+    },
+  },
+  {
+    "context": "GitPanel",
+    "bindings": {
+      "ctrl-g down": null,
+    },
+  },
+  {
+    "context": "GitPanel",
+    "bindings": {
+      "ctrl-g up": null,
+    },
+  },
+  {
+    "context": "AcpThread > Editor",
+    "bindings": {
+      "ctrl-shift-d": null,
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-cmd-g b": null,
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-cmd-b": null,
+    },
+  },
+  {
+    "context": "GitPanel",
+    "bindings": {
+      "ctrl-g ctrl-g": null,
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work only in normal mode
+      // Window movement bindings
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+
+      // +LSP
+      "space c a": "editor::ToggleCodeActions",
+      "space .": "editor::ToggleCodeActions",
+      "space c r": "editor::Rename",
+      "g d": "editor::GoToDefinition",
+      "g D": "editor::GoToDefinitionSplit",
+      "g i": "editor::GoToImplementation",
+      "g I": "editor::GoToImplementationSplit",
+      "g t": "editor::GoToTypeDefinition",
+      "g T": "editor::GoToTypeDefinitionSplit",
+      "g r": "editor::FindAllReferences",
+      "] d": "editor::GoToDiagnostic",
+      "[ d": "editor::GoToPreviousDiagnostic",
+      // TODO: Go to next/prev error
+      "] e": "editor::GoToDiagnostic",
+      "[ e": "editor::GoToPreviousDiagnostic",
+      // Diagnostic
+      "space x x": "diagnostics::Deploy",
+
+      // +Git
+      // Git prev/next hunk
+      "] h": "editor::GoToHunk",
+      "[ h": "editor::GoToPreviousHunk",
+      "space h t": "editor::ToggleSelectedDiffHunks",
+      "space h e": "editor::ExpandAllDiffHunks",
+      "space h a": "editor::ApplyDiffHunk",
+
+      // TODO: git diff is not ready yet, refer https://github.com/zed-industries/zed/issues/8665#issuecomment-2194000497
+
+      // + Buffers
+      // Switch between buffers
+      "shift-h": "pane::ActivatePreviousItem",
+      "shift-l": "pane::ActivateNextItem",
+      // Close active panel
+      "space b d": "pane::CloseActiveItem",
+      // Close other items
+      "space b o": "pane::CloseOtherItems",
+      // Project search
+      "space /": "pane::DeploySearch",
+      // TODO: Open other files
+      // Show project panel with current file
+      "space e": "pane::RevealInProjectPanel",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+    },
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "a": "project_panel::NewFile",
+      "A": "project_panel::NewDirectory",
+      "r": "project_panel::Rename",
+      "d": "project_panel::Delete",
+      "x": "project_panel::Cut",
+      "c": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      // Close project panel as project file panel on the right
+      "q": "workspace::ToggleLeftDock",
+      "space e": "workspace::ToggleLeftDock",
+      // Navigate between panel
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+    },
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "ctrl-j": "vim::ScrollDown",
+      "ctrl-k": "vim::ScrollUp",
+    },
+  },
+]
