@@ -42,12 +42,13 @@
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-g ctrl-j": "git::Pull",
-      "ctrl-g ctrl-k": "git::Push",
-      "ctrl-g ctrl-f": "git::Fetch",
-      "ctrl-g ctrl-d": "git::Diff",
-      "ctrl-g ctrl-b": "git::Branch",
-      "ctrl-g ctrl-g": "git_panel::ToggleFocus",
+      "cmd-g cmd-j": "git::Pull",
+      "cmd-g cmd-k": "git::Push",
+      "cmd-g cmd-f": "git::Fetch",
+      "cmd-g cmd-d": "git::Diff",
+      "cmd-g cmd-b": "git::Branch",
+      "cmd-g cmd-g": "git_panel::ToggleFocus",
+      "cmd-g cmd-o": "git::CreatePullRequest",
     },
   },
   {
